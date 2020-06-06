@@ -1,0 +1,17 @@
+
+version: '3.8'
+
+services:
+  dockercomposeproductapi:
+    image: dockercomposeproductapi
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5555:80"    
+    networks:
+      - product-network
+
+networks: 
+    product-network:
+        driver: bridge      
